@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_ecommerce_flutter/Core/Constant/Theme/light_theme.dart';
+import 'package:nike_ecommerce_flutter/Features/Products/data/repositories/product_repository_imp.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,6 +48,8 @@ class MyHomePage extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext context) {
+    productRepository.getProducts(0).then((value) => print(value.length));
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
